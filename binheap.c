@@ -17,7 +17,7 @@
 /* 5*/          FatalError( "Out of space!!!" );
 
             /* Allocate the array plus one extra for sentinel */
-/* 6*/      H->Elements = malloc( ( MaxElements + 1 )
+/* 6*/      H->Elements = malloc( (size_t)( MaxElements + 1 )
                                     * sizeof( ElementType ) );
 /* 7*/      if( H->Elements == NULL )
 /* 8*/          FatalError( "Out of space!!!" );
@@ -209,7 +209,7 @@ DeleteMin( PriorityQueue H )
 int main(void)
 {
     PriorityQueue H=Initialize(200);
-    for (size_t i = 0; i < 30; i++)
+    for (int i = 0; i < 30; i++)
     {
         /* code */
         Insert(i,H);
